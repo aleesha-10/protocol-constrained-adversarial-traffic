@@ -1,0 +1,11 @@
+# --- append these lines to your .gitignore ---
+data/*
+!data/.gitkeep
+*.pcap
+*.pcapng
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+.ipynb_checkpoints/
+.env

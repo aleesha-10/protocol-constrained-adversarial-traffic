@@ -1,0 +1,20 @@
+seeds: [0, 1, 2]          # run every experiment on all seeds, report mean +/- std
+data:
+  primary: CICIDS2017
+  cross_dataset: UNSW-NB15
+  classes: [BENIGN, DoS, PortScan, BruteForce]   # edit after feasibility test
+  heldout_class: Botnet                           # zero-day style generalization test
+  max_flows_per_class: 5000
+  split: {train: 0.70, val: 0.15, test: 0.15}
+image:
+  packets: 16
+  bytes: 64
+  channels: 3
+attack:
+  epsilons: [0.01, 0.02, 0.05, 0.1, 0.2]
+  pgd_steps: 20
+  pgd_step_size_ratio: 0.25
+training:
+  epochs: 20
+  batch_size: 128
+  lr: 0.001
