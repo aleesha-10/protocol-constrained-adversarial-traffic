@@ -9,3 +9,16 @@ data/*
 checkpoints/
 .ipynb_checkpoints/
 .env
+
+# project
+.venv/
+data/*
+!data/.gitkeep
+*.pcap
+*.pcapng
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+.ipynb_checkpoints/
+.env
