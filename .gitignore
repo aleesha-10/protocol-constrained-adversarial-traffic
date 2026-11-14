@@ -22,3 +22,6 @@ data/*
 checkpoints/
 .ipynb_checkpoints/
 .env
+
+__pycache__/
+*.pyc
