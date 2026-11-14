@@ -1,0 +1,61 @@
+{
+  "checkpoint": "results/metrics/resnet18_pcap_model.pth",
+  "arch": "resnet18",
+  "class_to_idx": {
+    "Benign": 0,
+    "DDoS-UDP_Flood": 1,
+    "DoS-TCP_Flood": 2,
+    "Recon-PortScan": 3
+  },
+  "holdout_classes": [
+    "DictionaryBruteForce"
+  ],
+  "closed_set_accuracy": 0.9669123669123669,
+  "closed_set_report": {
+    "Benign": {
+      "precision": 0.967343976777939,
+      "recall": 0.9744152046783626,
+      "f1-score": 0.9708667152221413,
+      "support": 2736.0
+    },
+    "DDoS-UDP_Flood": {
+      "precision": 0.9881255301102629,
+      "recall": 0.9748953974895398,
+      "f1-score": 0.9814658803706824,
+      "support": 1195.0
+    },
+    "DoS-TCP_Flood": {
+      "precision": 0.9,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.7659574468085106,
+      "support": 27.0
+    },
+    "Recon-PortScan": {
+      "precision": 0.9553488372093023,
+      "recall": 0.9566837447601304,
+      "f1-score": 0.956015824994182,
+      "support": 2147.0
+    },
+    "accuracy": 0.9669123669123669,
+    "macro avg": {
+      "precision": 0.952704586024376,
+      "recall": 0.8931652533986748,
+      "f1-score": 0.9185764668488792,
+      "support": 6105.0
+    },
+    "weighted avg": {
+      "precision": 0.9668955089982929,
+      "recall": 0.9669123669123669,
+      "f1-score": 0.9668124303385884,
+      "support": 6105.0
+    }
+  },
+  "holdout_mean_conf": 0.7731037735939026,
+  "holdout_mean_entropy": 0.5209811925888062,
+  "holdout_pred_distribution": {
+    "Benign": 2156,
+    "DDoS-UDP_Flood": 117,
+    "DoS-TCP_Flood": 15,
+    "Recon-PortScan": 750
+  }
+}

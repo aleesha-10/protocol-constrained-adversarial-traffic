@@ -1,0 +1,70 @@
+{
+  "config": {
+    "eps_bytes": [
+      1,
+      4,
+      16,
+      32
+    ],
+    "alpha_bytes": 2,
+    "steps": 25,
+    "targeted": false,
+    "target_class": null,
+    "attack_classes": [
+      "DDoS-UDP_Flood",
+      "DoS-TCP_Flood",
+      "Recon-PortScan",
+      "DictionaryBruteForce"
+    ],
+    "max_flows_per_class": 150,
+    "smoke_test": false,
+    "seed": 42
+  },
+  "clean": {
+    "n": 318,
+    "known_acc": 0.8411214953271028,
+    "mean_conf": 0.871333638077262,
+    "mean_bytes_changed": 0.0,
+    "mean_valid_rate": 1.0,
+    "header_violations": 0,
+    "realization_max_diff": 0.0
+  },
+  "eps": {
+    "1": {
+      "n": 318,
+      "known_acc": 0.8411214953271028,
+      "mean_conf": 0.8698359141184849,
+      "mean_bytes_changed": 138.18553459119497,
+      "mean_valid_rate": 0.9963967505241089,
+      "header_violations": 0,
+      "realization_max_diff": 2.9802322387695312e-08
+    },
+    "4": {
+      "n": 318,
+      "known_acc": 0.8364485981308412,
+      "mean_conf": 0.8651098676447598,
+      "mean_bytes_changed": 142.61006289308176,
+      "mean_valid_rate": 0.9963967505241089,
+      "header_violations": 0,
+      "realization_max_diff": 2.9802322387695312e-08
+    },
+    "16": {
+      "n": 318,
+      "known_acc": 0.8037383177570093,
+      "mean_conf": 0.8540728670433633,
+      "mean_bytes_changed": 145.0188679245283,
+      "mean_valid_rate": 0.9963967505241089,
+      "header_violations": 0,
+      "realization_max_diff": 5.960464477539063e-08
+    },
+    "32": {
+      "n": 318,
+      "known_acc": 0.7336448598130841,
+      "mean_conf": 0.7960231270430222,
+      "mean_bytes_changed": 144.61320754716982,
+      "mean_valid_rate": 0.9963967505241089,
+      "header_violations": 0,
+      "realization_max_diff": 5.960464477539063e-08
+    }
+  }
+}
