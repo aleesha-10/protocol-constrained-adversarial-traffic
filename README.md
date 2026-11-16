@@ -33,8 +33,18 @@ python scripts/feasibility_check.py --pcap data/raw/<one-day>.pcap --max-packets
 ```
 
 ## Reproduce our results
-_Fill in as experiments are completed: exact commands, in order, with seeds from `configs/default.yaml`._
+## Reproduce our results
+Place PCAPs in `data/raw/<class>/` (Benign, DDoS-UDP_Flood, DoS-TCP_Flood, Recon-PortScan,
+DictionaryBruteForce). Seed: 42. The flow cache (`data/flows_cache.pkl`) is rebuilt automatically
+when missing. Run from the project root, in order:
+
+    python scripts/train.py
+    python scripts/evaluate.py
+    python scripts/adversarial_attack.py
+    python scripts/analyze_per_class.py
+    python scripts/flip_table.py
+    python scripts/make_report.py
 
 ## Team
-- Member 1:
-- Member 2:
+- Aleesha 
+- Tayyaba
