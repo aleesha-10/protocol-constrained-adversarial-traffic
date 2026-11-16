@@ -1,0 +1,217 @@
+{
+  "n_rows": 318,
+  "n_sampled": 600,
+  "eps": [
+    1,
+    4,
+    16,
+    32
+  ],
+  "per_class": {
+    "DDoS-UDP_Flood": {
+      "1": {
+        "n": 119,
+        "n_correct": 94,
+        "flips": 0,
+        "flip_rate": 0.0,
+        "ci_lo": 3.3332244513953138e-18,
+        "ci_hi": 0.03926346257624568,
+        "to_benign": 0
+      },
+      "4": {
+        "n": 119,
+        "n_correct": 94,
+        "flips": 0,
+        "flip_rate": 0.0,
+        "ci_lo": 3.3332244513953138e-18,
+        "ci_hi": 0.03926346257624568,
+        "to_benign": 0
+      },
+      "16": {
+        "n": 119,
+        "n_correct": 94,
+        "flips": 2,
+        "flip_rate": 0.02127659574468085,
+        "ci_lo": 0.0058542135285401,
+        "ci_hi": 0.07429165489552492,
+        "to_benign": 0
+      },
+      "32": {
+        "n": 119,
+        "n_correct": 94,
+        "flips": 10,
+        "flip_rate": 0.10638297872340426,
+        "ci_lo": 0.05881825646839621,
+        "ci_hi": 0.18485723534694615,
+        "to_benign": 3
+      }
+    },
+    "DoS-TCP_Flood": {
+      "1": {
+        "n": 1,
+        "n_correct": 0,
+        "flips": 0,
+        "flip_rate": null,
+        "ci_lo": null,
+        "ci_hi": null,
+        "to_benign": 0
+      },
+      "4": {
+        "n": 1,
+        "n_correct": 0,
+        "flips": 0,
+        "flip_rate": null,
+        "ci_lo": null,
+        "ci_hi": null,
+        "to_benign": 0
+      },
+      "16": {
+        "n": 1,
+        "n_correct": 0,
+        "flips": 0,
+        "flip_rate": null,
+        "ci_lo": null,
+        "ci_hi": null,
+        "to_benign": 0
+      },
+      "32": {
+        "n": 1,
+        "n_correct": 0,
+        "flips": 0,
+        "flip_rate": null,
+        "ci_lo": null,
+        "ci_hi": null,
+        "to_benign": 0
+      }
+    },
+    "Recon-PortScan": {
+      "1": {
+        "n": 94,
+        "n_correct": 86,
+        "flips": 0,
+        "flip_rate": 0.0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.042759701519118086,
+        "to_benign": 0
+      },
+      "4": {
+        "n": 94,
+        "n_correct": 86,
+        "flips": 1,
+        "flip_rate": 0.011627906976744186,
+        "ci_lo": 0.0020555157424055515,
+        "ci_hi": 0.06296558806696559,
+        "to_benign": 1
+      },
+      "16": {
+        "n": 94,
+        "n_correct": 86,
+        "flips": 6,
+        "flip_rate": 0.06976744186046512,
+        "ci_lo": 0.032364973517860725,
+        "ci_hi": 0.14396314174277575,
+        "to_benign": 6
+      },
+      "32": {
+        "n": 94,
+        "n_correct": 86,
+        "flips": 13,
+        "flip_rate": 0.1511627906976744,
+        "ci_lo": 0.09052037372996753,
+        "ci_hi": 0.2416375575624404,
+        "to_benign": 12
+      }
+    },
+    "DictionaryBruteForce": {
+      "1": {
+        "n": 104,
+        "prediction_changed": 3,
+        "rate": 0.028846153846153848
+      },
+      "4": {
+        "n": 104,
+        "prediction_changed": 6,
+        "rate": 0.057692307692307696
+      },
+      "16": {
+        "n": 104,
+        "prediction_changed": 18,
+        "rate": 0.17307692307692307
+      },
+      "32": {
+        "n": 104,
+        "prediction_changed": 28,
+        "rate": 0.2692307692307692
+      }
+    }
+  },
+  "uncertainty": {
+    "1": {
+      "n_flipped": 0,
+      "share_conf_ge_0_9": null,
+      "share_conf_ge_0_8": null,
+      "median_conf": null
+    },
+    "4": {
+      "n_flipped": 1,
+      "share_conf_ge_0_9": 0.0,
+      "share_conf_ge_0_8": 0.0,
+      "median_conf": 0.5113967061042786
+    },
+    "16": {
+      "n_flipped": 8,
+      "share_conf_ge_0_9": 0.0,
+      "share_conf_ge_0_8": 0.125,
+      "median_conf": 0.634426474571228,
+      "auroc_confidence_detector": 0.9597222222222223
+    },
+    "32": {
+      "n_flipped": 23,
+      "share_conf_ge_0_9": 0.21739130434782608,
+      "share_conf_ge_0_8": 0.34782608695652173,
+      "median_conf": 0.6989170908927917,
+      "auroc_confidence_detector": 0.922463768115942
+    }
+  },
+  "capacity": {
+    "spearman_rho": 0.3257710422398214,
+    "p_value": 8.098114188343156e-06,
+    "n": 180,
+    "bins": [
+      [
+        "low",
+        9.0,
+        54.0,
+        60,
+        0,
+        0.0,
+        -6.521353384539763e-18,
+        0.060173930477932895
+      ],
+      [
+        "medium",
+        60.0,
+        186.0,
+        61,
+        10,
+        0.16393442622950818,
+        0.0915591348574295,
+        0.27613074324551673
+      ],
+      [
+        "high",
+        188.0,
+        552.0,
+        59,
+        13,
+        0.22033898305084745,
+        0.13354072524323757,
+        0.3413294244665089
+      ]
+    ],
+    "eps": 32,
+    "capacity_proxy": "bytes changed per flow at eps=1"
+  },
+  "known_flows": 214,
+  "correct_before": 180
+}
