@@ -1,0 +1,5 @@
+class,sampled,with_payload,no_payload,editable_median,editable_min,editable_max
+DDoS-UDP_Flood,150,119,31,288.0,19,576
+DoS-TCP_Flood,150,1,149,24.0,24,24
+Recon-PortScan,150,94,56,72.0,12,576
+DictionaryBruteForce,150,104,46,84.0,6,576

@@ -1,0 +1,601 @@
+sample_index,class,packets_stored,editable_pixels,has_payload,reason_if_none
+0,DDoS-UDP_Flood,48,288,True,
+1,DDoS-UDP_Flood,48,288,True,
+2,DDoS-UDP_Flood,10,19,True,
+3,DDoS-UDP_Flood,3,48,True,
+4,DDoS-UDP_Flood,2,38,True,
+5,DDoS-UDP_Flood,3,48,True,
+6,DDoS-UDP_Flood,10,19,True,
+7,DDoS-UDP_Flood,3,48,True,
+8,DDoS-UDP_Flood,48,288,True,
+9,DDoS-UDP_Flood,48,288,True,
+10,DDoS-UDP_Flood,30,120,True,
+11,DDoS-UDP_Flood,48,288,True,
+12,DDoS-UDP_Flood,11,396,True,
+13,DDoS-UDP_Flood,48,288,True,
+14,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+15,DDoS-UDP_Flood,48,288,True,
+16,DDoS-UDP_Flood,48,288,True,
+17,DDoS-UDP_Flood,48,288,True,
+18,DDoS-UDP_Flood,8,0,False,no packet carries any payload bytes
+19,DDoS-UDP_Flood,10,24,True,
+20,DDoS-UDP_Flood,48,288,True,
+21,DDoS-UDP_Flood,48,288,True,
+22,DDoS-UDP_Flood,48,288,True,
+23,DDoS-UDP_Flood,48,288,True,
+24,DDoS-UDP_Flood,48,288,True,
+25,DDoS-UDP_Flood,10,24,True,
+26,DDoS-UDP_Flood,3,48,True,
+27,DDoS-UDP_Flood,48,288,True,
+28,DDoS-UDP_Flood,8,200,True,
+29,DDoS-UDP_Flood,48,288,True,
+30,DDoS-UDP_Flood,48,288,True,
+31,DDoS-UDP_Flood,48,288,True,
+32,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+33,DDoS-UDP_Flood,34,48,True,
+34,DDoS-UDP_Flood,10,19,True,
+35,DDoS-UDP_Flood,4,0,False,no packet carries any payload bytes
+36,DDoS-UDP_Flood,10,24,True,
+37,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+38,DDoS-UDP_Flood,10,168,True,
+39,DDoS-UDP_Flood,10,19,True,
+40,DDoS-UDP_Flood,5,96,True,
+41,DDoS-UDP_Flood,48,288,True,
+42,DDoS-UDP_Flood,10,24,True,
+43,DDoS-UDP_Flood,48,288,True,
+44,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+45,DDoS-UDP_Flood,48,288,True,
+46,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+47,DDoS-UDP_Flood,48,288,True,
+48,DDoS-UDP_Flood,48,288,True,
+49,DDoS-UDP_Flood,2,72,True,
+50,DDoS-UDP_Flood,48,288,True,
+51,DDoS-UDP_Flood,48,288,True,
+52,DDoS-UDP_Flood,4,0,False,no packet carries any payload bytes
+53,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+54,DDoS-UDP_Flood,48,288,True,
+55,DDoS-UDP_Flood,48,288,True,
+56,DDoS-UDP_Flood,48,288,True,
+57,DDoS-UDP_Flood,48,288,True,
+58,DDoS-UDP_Flood,48,288,True,
+59,DDoS-UDP_Flood,48,288,True,
+60,DDoS-UDP_Flood,48,288,True,
+61,DDoS-UDP_Flood,10,24,True,
+62,DDoS-UDP_Flood,48,288,True,
+63,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+64,DDoS-UDP_Flood,4,90,True,
+65,DDoS-UDP_Flood,48,288,True,
+66,DDoS-UDP_Flood,10,24,True,
+67,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+68,DDoS-UDP_Flood,48,288,True,
+69,DDoS-UDP_Flood,35,120,True,
+70,DDoS-UDP_Flood,24,84,True,
+71,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+72,DDoS-UDP_Flood,48,288,True,
+73,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+74,DDoS-UDP_Flood,19,132,True,
+75,DDoS-UDP_Flood,48,288,True,
+76,DDoS-UDP_Flood,25,132,True,
+77,DDoS-UDP_Flood,22,72,True,
+78,DDoS-UDP_Flood,48,288,True,
+79,DDoS-UDP_Flood,4,108,True,
+80,DDoS-UDP_Flood,48,288,True,
+81,DDoS-UDP_Flood,48,288,True,
+82,DDoS-UDP_Flood,48,288,True,
+83,DDoS-UDP_Flood,48,288,True,
+84,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+85,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+86,DDoS-UDP_Flood,48,288,True,
+87,DDoS-UDP_Flood,48,288,True,
+88,DDoS-UDP_Flood,48,288,True,
+89,DDoS-UDP_Flood,48,288,True,
+90,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+91,DDoS-UDP_Flood,48,288,True,
+92,DDoS-UDP_Flood,48,288,True,
+93,DDoS-UDP_Flood,48,288,True,
+94,DDoS-UDP_Flood,22,576,True,
+95,DDoS-UDP_Flood,48,288,True,
+96,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+97,DDoS-UDP_Flood,39,84,True,
+98,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+99,DDoS-UDP_Flood,48,288,True,
+100,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+101,DDoS-UDP_Flood,2,38,True,
+102,DDoS-UDP_Flood,48,96,True,
+103,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+104,DDoS-UDP_Flood,11,0,False,no packet carries any payload bytes
+105,DDoS-UDP_Flood,12,432,True,
+106,DDoS-UDP_Flood,4,0,False,no packet carries any payload bytes
+107,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+108,DDoS-UDP_Flood,48,288,True,
+109,DDoS-UDP_Flood,48,288,True,
+110,DDoS-UDP_Flood,5,72,True,
+111,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+112,DDoS-UDP_Flood,48,192,True,
+113,DDoS-UDP_Flood,48,288,True,
+114,DDoS-UDP_Flood,48,288,True,
+115,DDoS-UDP_Flood,48,288,True,
+116,DDoS-UDP_Flood,48,288,True,
+117,DDoS-UDP_Flood,48,288,True,
+118,DDoS-UDP_Flood,48,288,True,
+119,DDoS-UDP_Flood,3,48,True,
+120,DDoS-UDP_Flood,10,19,True,
+121,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+122,DDoS-UDP_Flood,10,254,True,
+123,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+124,DDoS-UDP_Flood,48,288,True,
+125,DDoS-UDP_Flood,48,288,True,
+126,DDoS-UDP_Flood,48,288,True,
+127,DDoS-UDP_Flood,48,288,True,
+128,DDoS-UDP_Flood,48,288,True,
+129,DDoS-UDP_Flood,48,288,True,
+130,DDoS-UDP_Flood,48,288,True,
+131,DDoS-UDP_Flood,48,288,True,
+132,DDoS-UDP_Flood,4,108,True,
+133,DDoS-UDP_Flood,48,288,True,
+134,DDoS-UDP_Flood,10,24,True,
+135,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+136,DDoS-UDP_Flood,48,288,True,
+137,DDoS-UDP_Flood,10,24,True,
+138,DDoS-UDP_Flood,48,288,True,
+139,DDoS-UDP_Flood,13,270,True,
+140,DDoS-UDP_Flood,48,288,True,
+141,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+142,DDoS-UDP_Flood,48,288,True,
+143,DDoS-UDP_Flood,4,0,False,no packet carries any payload bytes
+144,DDoS-UDP_Flood,48,288,True,
+145,DDoS-UDP_Flood,7,48,True,
+146,DDoS-UDP_Flood,7,196,True,
+147,DDoS-UDP_Flood,4,0,False,no packet carries any payload bytes
+148,DDoS-UDP_Flood,2,0,False,no packet carries any payload bytes
+149,DDoS-UDP_Flood,48,288,True,
+150,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+151,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+152,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+153,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+154,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+155,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+156,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+157,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+158,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+159,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+160,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+161,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+162,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+163,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+164,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+165,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+166,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+167,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+168,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+169,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+170,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+171,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+172,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+173,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+174,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+175,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+176,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+177,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+178,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+179,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+180,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+181,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+182,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+183,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+184,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+185,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+186,DoS-TCP_Flood,2,0,False,no packet carries any payload bytes
+187,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+188,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+189,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+190,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+191,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+192,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+193,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+194,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+195,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+196,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+197,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+198,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+199,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+200,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+201,DoS-TCP_Flood,9,24,True,
+202,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+203,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+204,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+205,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+206,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+207,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+208,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+209,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+210,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+211,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+212,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+213,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+214,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+215,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+216,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+217,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+218,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+219,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+220,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+221,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+222,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+223,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+224,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+225,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+226,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+227,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+228,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+229,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+230,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+231,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+232,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+233,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+234,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+235,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+236,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+237,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+238,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+239,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+240,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+241,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+242,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+243,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+244,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+245,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+246,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+247,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+248,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+249,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+250,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+251,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+252,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+253,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+254,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+255,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+256,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+257,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+258,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+259,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+260,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+261,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+262,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+263,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+264,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+265,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+266,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+267,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+268,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+269,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+270,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+271,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+272,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+273,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+274,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+275,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+276,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+277,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+278,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+279,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+280,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+281,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+282,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+283,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+284,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+285,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+286,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+287,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+288,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+289,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+290,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+291,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+292,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+293,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+294,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+295,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+296,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+297,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+298,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+299,DoS-TCP_Flood,4,0,False,no packet carries any payload bytes
+300,Recon-PortScan,10,24,True,
+301,Recon-PortScan,2,0,False,no packet carries any payload bytes
+302,Recon-PortScan,10,24,True,
+303,Recon-PortScan,4,0,False,no packet carries any payload bytes
+304,Recon-PortScan,2,0,False,no packet carries any payload bytes
+305,Recon-PortScan,48,576,True,
+306,Recon-PortScan,10,24,True,
+307,Recon-PortScan,2,38,True,
+308,Recon-PortScan,2,0,False,no packet carries any payload bytes
+309,Recon-PortScan,4,0,False,no packet carries any payload bytes
+310,Recon-PortScan,10,19,True,
+311,Recon-PortScan,2,38,True,
+312,Recon-PortScan,2,0,False,no packet carries any payload bytes
+313,Recon-PortScan,4,0,False,no packet carries any payload bytes
+314,Recon-PortScan,17,55,True,
+315,Recon-PortScan,2,0,False,no packet carries any payload bytes
+316,Recon-PortScan,3,0,False,no packet carries any payload bytes
+317,Recon-PortScan,2,0,False,no packet carries any payload bytes
+318,Recon-PortScan,48,144,True,
+319,Recon-PortScan,48,378,True,
+320,Recon-PortScan,48,576,True,
+321,Recon-PortScan,4,0,False,no packet carries any payload bytes
+322,Recon-PortScan,48,378,True,
+323,Recon-PortScan,2,0,False,no packet carries any payload bytes
+324,Recon-PortScan,48,264,True,
+325,Recon-PortScan,48,120,True,
+326,Recon-PortScan,48,132,True,
+327,Recon-PortScan,48,264,True,
+328,Recon-PortScan,12,24,True,
+329,Recon-PortScan,2,0,False,no packet carries any payload bytes
+330,Recon-PortScan,12,24,True,
+331,Recon-PortScan,2,0,False,no packet carries any payload bytes
+332,Recon-PortScan,2,0,False,no packet carries any payload bytes
+333,Recon-PortScan,10,24,True,
+334,Recon-PortScan,2,72,True,
+335,Recon-PortScan,2,0,False,no packet carries any payload bytes
+336,Recon-PortScan,2,0,False,no packet carries any payload bytes
+337,Recon-PortScan,2,0,False,no packet carries any payload bytes
+338,Recon-PortScan,10,19,True,
+339,Recon-PortScan,7,0,False,no packet carries any payload bytes
+340,Recon-PortScan,48,120,True,
+341,Recon-PortScan,10,24,True,
+342,Recon-PortScan,10,19,True,
+343,Recon-PortScan,2,0,False,no packet carries any payload bytes
+344,Recon-PortScan,2,0,False,no packet carries any payload bytes
+345,Recon-PortScan,48,0,False,no packet carries any payload bytes
+346,Recon-PortScan,48,432,True,
+347,Recon-PortScan,48,0,False,no packet carries any payload bytes
+348,Recon-PortScan,48,121,True,
+349,Recon-PortScan,12,144,True,
+350,Recon-PortScan,3,108,True,
+351,Recon-PortScan,10,24,True,
+352,Recon-PortScan,2,0,False,no packet carries any payload bytes
+353,Recon-PortScan,12,24,True,
+354,Recon-PortScan,48,432,True,
+355,Recon-PortScan,48,72,True,
+356,Recon-PortScan,4,0,False,no packet carries any payload bytes
+357,Recon-PortScan,48,60,True,
+358,Recon-PortScan,2,0,False,no packet carries any payload bytes
+359,Recon-PortScan,48,121,True,
+360,Recon-PortScan,4,108,True,
+361,Recon-PortScan,48,108,True,
+362,Recon-PortScan,6,24,True,
+363,Recon-PortScan,3,0,False,no packet carries any payload bytes
+364,Recon-PortScan,10,24,True,
+365,Recon-PortScan,2,0,False,no packet carries any payload bytes
+366,Recon-PortScan,10,24,True,
+367,Recon-PortScan,10,19,True,
+368,Recon-PortScan,19,144,True,
+369,Recon-PortScan,3,0,False,no packet carries any payload bytes
+370,Recon-PortScan,48,264,True,
+371,Recon-PortScan,4,0,False,no packet carries any payload bytes
+372,Recon-PortScan,48,0,False,no packet carries any payload bytes
+373,Recon-PortScan,48,132,True,
+374,Recon-PortScan,48,96,True,
+375,Recon-PortScan,2,0,False,no packet carries any payload bytes
+376,Recon-PortScan,10,19,True,
+377,Recon-PortScan,10,19,True,
+378,Recon-PortScan,48,192,True,
+379,Recon-PortScan,12,24,True,
+380,Recon-PortScan,2,0,False,no packet carries any payload bytes
+381,Recon-PortScan,48,264,True,
+382,Recon-PortScan,48,0,False,no packet carries any payload bytes
+383,Recon-PortScan,10,19,True,
+384,Recon-PortScan,2,38,True,
+385,Recon-PortScan,29,48,True,
+386,Recon-PortScan,2,0,False,no packet carries any payload bytes
+387,Recon-PortScan,27,48,True,
+388,Recon-PortScan,2,0,False,no packet carries any payload bytes
+389,Recon-PortScan,2,0,False,no packet carries any payload bytes
+390,Recon-PortScan,48,576,True,
+391,Recon-PortScan,48,576,True,
+392,Recon-PortScan,2,0,False,no packet carries any payload bytes
+393,Recon-PortScan,10,24,True,
+394,Recon-PortScan,48,576,True,
+395,Recon-PortScan,10,19,True,
+396,Recon-PortScan,48,132,True,
+397,Recon-PortScan,6,216,True,
+398,Recon-PortScan,10,24,True,
+399,Recon-PortScan,13,24,True,
+400,Recon-PortScan,2,38,True,
+401,Recon-PortScan,2,38,True,
+402,Recon-PortScan,48,0,False,no packet carries any payload bytes
+403,Recon-PortScan,48,264,True,
+404,Recon-PortScan,48,576,True,
+405,Recon-PortScan,2,38,True,
+406,Recon-PortScan,12,24,True,
+407,Recon-PortScan,48,264,True,
+408,Recon-PortScan,48,0,False,payload only after packet 16
+409,Recon-PortScan,2,38,True,
+410,Recon-PortScan,48,576,True,
+411,Recon-PortScan,48,576,True,
+412,Recon-PortScan,10,19,True,
+413,Recon-PortScan,2,0,False,no packet carries any payload bytes
+414,Recon-PortScan,10,19,True,
+415,Recon-PortScan,2,0,False,no packet carries any payload bytes
+416,Recon-PortScan,4,108,True,
+417,Recon-PortScan,48,72,True,
+418,Recon-PortScan,12,24,True,
+419,Recon-PortScan,33,132,True,
+420,Recon-PortScan,2,0,False,no packet carries any payload bytes
+421,Recon-PortScan,48,0,False,no packet carries any payload bytes
+422,Recon-PortScan,10,24,True,
+423,Recon-PortScan,48,576,True,
+424,Recon-PortScan,48,264,True,
+425,Recon-PortScan,12,24,True,
+426,Recon-PortScan,10,19,True,
+427,Recon-PortScan,48,576,True,
+428,Recon-PortScan,4,72,True,
+429,Recon-PortScan,4,0,False,no packet carries any payload bytes
+430,Recon-PortScan,5,12,True,
+431,Recon-PortScan,2,0,False,no packet carries any payload bytes
+432,Recon-PortScan,48,0,False,no packet carries any payload bytes
+433,Recon-PortScan,12,24,True,
+434,Recon-PortScan,2,0,False,no packet carries any payload bytes
+435,Recon-PortScan,48,576,True,
+436,Recon-PortScan,2,0,False,no packet carries any payload bytes
+437,Recon-PortScan,10,24,True,
+438,Recon-PortScan,48,288,True,
+439,Recon-PortScan,48,576,True,
+440,Recon-PortScan,2,0,False,no packet carries any payload bytes
+441,Recon-PortScan,2,0,False,no packet carries any payload bytes
+442,Recon-PortScan,48,121,True,
+443,Recon-PortScan,10,24,True,
+444,Recon-PortScan,2,0,False,no packet carries any payload bytes
+445,Recon-PortScan,4,0,False,no packet carries any payload bytes
+446,Recon-PortScan,3,0,False,no packet carries any payload bytes
+447,Recon-PortScan,48,576,True,
+448,Recon-PortScan,2,0,False,no packet carries any payload bytes
+449,Recon-PortScan,2,0,False,no packet carries any payload bytes
+450,DictionaryBruteForce,3,0,False,no packet carries any payload bytes
+451,DictionaryBruteForce,32,84,True,
+452,DictionaryBruteForce,2,38,True,
+453,DictionaryBruteForce,48,576,True,
+454,DictionaryBruteForce,6,0,False,no packet carries any payload bytes
+455,DictionaryBruteForce,48,360,True,
+456,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+457,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+458,DictionaryBruteForce,22,576,True,
+459,DictionaryBruteForce,4,12,True,
+460,DictionaryBruteForce,7,0,False,payload starts after byte 64 in every one of the first 16 packets
+461,DictionaryBruteForce,29,78,True,
+462,DictionaryBruteForce,2,38,True,
+463,DictionaryBruteForce,2,0,False,payload starts after byte 64 in every one of the first 16 packets
+464,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+465,DictionaryBruteForce,6,34,True,
+466,DictionaryBruteForce,3,108,True,
+467,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+468,DictionaryBruteForce,48,264,True,
+469,DictionaryBruteForce,7,30,True,
+470,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+471,DictionaryBruteForce,38,0,False,payload starts after byte 64 in every one of the first 16 packets
+472,DictionaryBruteForce,32,72,True,
+473,DictionaryBruteForce,4,12,True,
+474,DictionaryBruteForce,4,12,True,
+475,DictionaryBruteForce,6,30,True,
+476,DictionaryBruteForce,48,132,True,
+477,DictionaryBruteForce,6,96,True,
+478,DictionaryBruteForce,48,0,False,no packet carries any payload bytes
+479,DictionaryBruteForce,19,24,True,
+480,DictionaryBruteForce,2,38,True,
+481,DictionaryBruteForce,2,54,True,
+482,DictionaryBruteForce,6,96,True,
+483,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+484,DictionaryBruteForce,2,0,False,payload starts after byte 64 in every one of the first 16 packets
+485,DictionaryBruteForce,48,576,True,
+486,DictionaryBruteForce,2,54,True,
+487,DictionaryBruteForce,25,96,True,
+488,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+489,DictionaryBruteForce,8,0,False,no packet carries any payload bytes
+490,DictionaryBruteForce,24,576,True,
+491,DictionaryBruteForce,4,12,True,
+492,DictionaryBruteForce,4,12,True,
+493,DictionaryBruteForce,16,168,True,
+494,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+495,DictionaryBruteForce,41,84,True,
+496,DictionaryBruteForce,2,6,True,
+497,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+498,DictionaryBruteForce,22,264,True,
+499,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+500,DictionaryBruteForce,24,576,True,
+501,DictionaryBruteForce,2,38,True,
+502,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+503,DictionaryBruteForce,48,576,True,
+504,DictionaryBruteForce,48,432,True,
+505,DictionaryBruteForce,6,30,True,
+506,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+507,DictionaryBruteForce,48,0,False,payload only after packet 16
+508,DictionaryBruteForce,4,12,True,
+509,DictionaryBruteForce,7,30,True,
+510,DictionaryBruteForce,48,132,True,
+511,DictionaryBruteForce,4,12,True,
+512,DictionaryBruteForce,14,0,False,no packet carries any payload bytes
+513,DictionaryBruteForce,2,38,True,
+514,DictionaryBruteForce,4,12,True,
+515,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+516,DictionaryBruteForce,4,12,True,
+517,DictionaryBruteForce,27,84,True,
+518,DictionaryBruteForce,21,240,True,
+519,DictionaryBruteForce,12,192,True,
+520,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+521,DictionaryBruteForce,4,12,True,
+522,DictionaryBruteForce,4,12,True,
+523,DictionaryBruteForce,2,38,True,
+524,DictionaryBruteForce,7,30,True,
+525,DictionaryBruteForce,24,576,True,
+526,DictionaryBruteForce,48,576,True,
+527,DictionaryBruteForce,10,254,True,
+528,DictionaryBruteForce,48,576,True,
+529,DictionaryBruteForce,48,0,False,no packet carries any payload bytes
+530,DictionaryBruteForce,48,120,True,
+531,DictionaryBruteForce,48,84,True,
+532,DictionaryBruteForce,6,30,True,
+533,DictionaryBruteForce,6,0,False,no packet carries any payload bytes
+534,DictionaryBruteForce,2,0,False,payload starts after byte 64 in every one of the first 16 packets
+535,DictionaryBruteForce,6,48,True,
+536,DictionaryBruteForce,48,108,True,
+537,DictionaryBruteForce,48,0,False,no packet carries any payload bytes
+538,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+539,DictionaryBruteForce,32,84,True,
+540,DictionaryBruteForce,2,36,True,
+541,DictionaryBruteForce,9,234,True,
+542,DictionaryBruteForce,23,120,True,
+543,DictionaryBruteForce,2,38,True,
+544,DictionaryBruteForce,2,0,False,payload starts after byte 64 in every one of the first 16 packets
+545,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+546,DictionaryBruteForce,48,264,True,
+547,DictionaryBruteForce,2,54,True,
+548,DictionaryBruteForce,48,144,True,
+549,DictionaryBruteForce,48,576,True,
+550,DictionaryBruteForce,6,12,True,
+551,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+552,DictionaryBruteForce,10,270,True,
+553,DictionaryBruteForce,8,54,True,
+554,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+555,DictionaryBruteForce,2,54,True,
+556,DictionaryBruteForce,33,84,True,
+557,DictionaryBruteForce,2,0,False,payload starts after byte 64 in every one of the first 16 packets
+558,DictionaryBruteForce,2,72,True,
+559,DictionaryBruteForce,46,84,True,
+560,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+561,DictionaryBruteForce,2,6,True,
+562,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+563,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+564,DictionaryBruteForce,2,58,True,
+565,DictionaryBruteForce,4,90,True,
+566,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+567,DictionaryBruteForce,5,0,False,no packet carries any payload bytes
+568,DictionaryBruteForce,8,0,False,no packet carries any payload bytes
+569,DictionaryBruteForce,2,72,True,
+570,DictionaryBruteForce,9,144,True,
+571,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+572,DictionaryBruteForce,9,252,True,
+573,DictionaryBruteForce,2,0,False,payload starts after byte 64 in every one of the first 16 packets
+574,DictionaryBruteForce,48,288,True,
+575,DictionaryBruteForce,38,0,False,payload starts after byte 64 in every one of the first 16 packets
+576,DictionaryBruteForce,12,96,True,
+577,DictionaryBruteForce,48,576,True,
+578,DictionaryBruteForce,28,324,True,
+579,DictionaryBruteForce,35,84,True,
+580,DictionaryBruteForce,7,0,False,no packet carries any payload bytes
+581,DictionaryBruteForce,24,576,True,
+582,DictionaryBruteForce,2,38,True,
+583,DictionaryBruteForce,6,30,True,
+584,DictionaryBruteForce,4,12,True,
+585,DictionaryBruteForce,4,108,True,
+586,DictionaryBruteForce,4,12,True,
+587,DictionaryBruteForce,2,38,True,
+588,DictionaryBruteForce,6,96,True,
+589,DictionaryBruteForce,4,12,True,
+590,DictionaryBruteForce,7,54,True,
+591,DictionaryBruteForce,48,576,True,
+592,DictionaryBruteForce,8,200,True,
+593,DictionaryBruteForce,48,120,True,
+594,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+595,DictionaryBruteForce,2,0,False,no packet carries any payload bytes
+596,DictionaryBruteForce,2,38,True,
+597,DictionaryBruteForce,13,150,True,
+598,DictionaryBruteForce,32,84,True,
+599,DictionaryBruteForce,21,36,True,

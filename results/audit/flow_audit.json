@@ -1,0 +1,88 @@
+{
+  "signature": [
+    "v3-earlybreak",
+    "('DDoS-UDP_Flood', 'DoS-TCP_Flood', 'Recon-PortScan', 'DictionaryBruteForce')",
+    "48",
+    "600"
+  ],
+  "classes": {
+    "DDoS-UDP_Flood": {
+      "sampled": 150,
+      "with_payload": 119,
+      "no_payload": 31,
+      "no_ip_packets": 0,
+      "reasons": {
+        "no packet carries any payload bytes": 31
+      },
+      "editable_pixels_mean": 219.16806722689077,
+      "editable_pixels_median": 288.0,
+      "editable_pixels_min": 19,
+      "editable_pixels_max": 576,
+      "packets_checked": 4236,
+      "packets_invalid_before_any_edit": 49
+    },
+    "DoS-TCP_Flood": {
+      "sampled": 150,
+      "with_payload": 1,
+      "no_payload": 149,
+      "no_ip_packets": 0,
+      "reasons": {
+        "no packet carries any payload bytes": 149
+      },
+      "editable_pixels_mean": 24.0,
+      "editable_pixels_median": 24.0,
+      "editable_pixels_min": 24,
+      "editable_pixels_max": 24,
+      "packets_checked": 603,
+      "packets_invalid_before_any_edit": 0
+    },
+    "Recon-PortScan": {
+      "sampled": 150,
+      "with_payload": 94,
+      "no_payload": 56,
+      "no_ip_packets": 0,
+      "reasons": {
+        "no packet carries any payload bytes": 55,
+        "payload only after packet 16": 1
+      },
+      "editable_pixels_mean": 162.56382978723406,
+      "editable_pixels_median": 72.0,
+      "editable_pixels_min": 12,
+      "editable_pixels_max": 576,
+      "packets_checked": 2959,
+      "packets_invalid_before_any_edit": 39
+    },
+    "DictionaryBruteForce": {
+      "sampled": 150,
+      "with_payload": 104,
+      "no_payload": 46,
+      "no_ip_packets": 0,
+      "reasons": {
+        "no packet carries any payload bytes": 36,
+        "payload starts after byte 64 in every one of the first 16 packets": 9,
+        "payload only after packet 16": 1
+      },
+      "editable_pixels_mean": 152.32692307692307,
+      "editable_pixels_median": 84.0,
+      "editable_pixels_min": 6,
+      "editable_pixels_max": 576,
+      "packets_checked": 2281,
+      "packets_invalid_before_any_edit": 0
+    }
+  },
+  "packets_checked": 10079,
+  "packets_invalid_before_edit": 88,
+  "mean_pre_edit_valid_share_with_payload": 0.9919642126341739,
+  "checksum_details": {
+    "DDoS-UDP_Flood|valid|udp": 3721,
+    "DDoS-UDP_Flood|valid|tcp": 466,
+    "DDoS-UDP_Flood|INVALID|tcp": 49,
+    "DoS-TCP_Flood|valid|tcp": 603,
+    "Recon-PortScan|valid|tcp": 1635,
+    "Recon-PortScan|valid|udp": 1285,
+    "Recon-PortScan|INVALID|tcp": 39,
+    "DictionaryBruteForce|valid|tcp": 1113,
+    "DictionaryBruteForce|valid|truncated-skipped": 883,
+    "DictionaryBruteForce|valid|udp": 285
+  }
+}
