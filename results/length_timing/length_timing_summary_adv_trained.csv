@@ -1,0 +1,10 @@
+model,arm,class,correct_clean,flips,flip_rate,to_benign,valid_rate,hdr_violations
+adv_trained,pad_only_1024B,DDoS-UDP_Flood,27,25,0.9259,0,1.0,0
+adv_trained,pad_only_1024B,DoS-TCP_Flood,4,0,0.0,0,1.0,0
+adv_trained,pad_only_1024B,Recon-PortScan,142,6,0.0423,1,1.0,0
+adv_trained,timing_only_1000ms,DDoS-UDP_Flood,27,27,1.0,15,1.0,0
+adv_trained,timing_only_1000ms,DoS-TCP_Flood,4,4,1.0,0,1.0,0
+adv_trained,timing_only_1000ms,Recon-PortScan,142,113,0.7958,55,1.0,0
+adv_trained,joint_pad1024B_delay1000ms,DDoS-UDP_Flood,27,25,0.9259,0,1.0,0
+adv_trained,joint_pad1024B_delay1000ms,DoS-TCP_Flood,4,4,1.0,0,1.0,0
+adv_trained,joint_pad1024B_delay1000ms,Recon-PortScan,142,117,0.8239,50,1.0,0

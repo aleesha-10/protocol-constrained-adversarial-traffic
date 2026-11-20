@@ -72,14 +72,14 @@ CLAIMS = [
 
 # numbers from the baseline report, searched for anywhere in eval_baseline_summary.json
 BASELINE_CLAIMS = [
-    ("overall accuracy", 0.9669, 4), ("ECE", 0.0244, 4),
-    ("Benign precision", 0.9673, 4), ("Benign recall", 0.9744, 4), ("Benign F1", 0.9709, 4),
-    ("DDoS precision", 0.9881, 4), ("DDoS recall", 0.9749, 4), ("DDoS F1", 0.9815, 4),
-    ("DoS-TCP precision", 0.9000, 4), ("DoS-TCP recall", 0.6667, 4), ("DoS-TCP F1", 0.7660, 4),
-    ("Recon precision", 0.9553, 4), ("Recon recall", 0.9567, 4), ("Recon F1", 0.9560, 4),
-    ("Benign support", 2736, 0), ("DDoS support", 1195, 0), ("DoS-TCP support", 27, 0), ("Recon support", 2147, 0),
-    ("held-out -> Benign", 2156, 0), ("held-out -> Recon", 750, 0), ("held-out -> DDoS", 117, 0), ("held-out -> DoS-TCP", 15, 0),
-    ("held-out mean max-softmax", 0.7731, 4), ("known mean max-softmax", 0.9426, 4), ("held-out mean entropy", 0.5210, 4),
+    ("overall accuracy", 0.8691, 4), ("macro F1", 0.7222, 4), ("ECE", 0.0497, 4),
+    ("Benign precision", 0.9366, 4), ("Benign recall", 0.9654, 4), ("Benign F1", 0.9508, 4),
+    ("DDoS precision", 0.9741, 4), ("DDoS recall", 0.8178, 4), ("DDoS F1", 0.8891, 4),
+    ("DoS-TCP precision", 0.6667, 4), ("DoS-TCP recall", 0.1667, 4), ("DoS-TCP F1", 0.2667, 4),
+    ("Recon precision", 0.6890, 4), ("Recon recall", 0.9046, 4), ("Recon F1", 0.7822, 4),
+    ("Benign support", 260, 0), ("DDoS support", 505, 0), ("DoS-TCP support", 12, 0), ("Recon support", 262, 0),
+    ("held-out -> Benign", 1755, 0), ("held-out -> Recon", 889, 0), ("held-out -> DDoS", 129, 0), ("held-out -> DoS-TCP", 265, 0),
+    ("held-out mean max-softmax", 0.8361, 4), ("known mean max-softmax", 0.9182, 4), ("held-out mean entropy", 0.4172, 4),
 ]
 
 
@@ -173,6 +173,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--npz", default="results/metrics/adversarial_per_sample_OFFICIAL.npz")
     ap.add_argument("--baseline-json", default="results/metrics/eval_baseline_summary.json")
+    ap.add_argument("--baseline-npz", default="results/metrics/eval_baseline.npz")
     ap.add_argument("--claims", default=None, help="JSON of {claim_id: quoted_value} replacing the quoted values")
     ap.add_argument("--dump", default=None, help="write the computed value of every claim to this JSON file")
     args = ap.parse_args()
@@ -202,6 +203,43 @@ def main():
             print(f"{cid:<24}{q:>10}  FAIL     {shown}   <- {desc}")
     if Path(args.baseline_json).exists():
         leaves = flatten(json.load(open(args.baseline_json)))
+        if Path(args.baseline_npz).exists():
+            b = np.load(args.baseline_npz, allow_pickle=True)
+            kp, yt = b["known_probs"], b["y_true"]
+            conf, pred = kp.max(1), kp.argmax(1)
+            acc = (pred == yt).astype(float)
+            class_f1 = []
+            for i, name in enumerate(["Benign", "DDoS-UDP_Flood", "DoS-TCP_Flood", "Recon-PortScan"]):
+                actual, predicted = yt == i, pred == i
+                tp = np.count_nonzero(actual & predicted)
+                support = np.count_nonzero(actual)
+                predicted_count = np.count_nonzero(predicted)
+                precision = tp / predicted_count if predicted_count else 0.0
+                recall = tp / support if support else 0.0
+                f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+                class_f1.append(f1)
+                leaves.extend([
+                    (f"/npz/{name}/precision", float(precision)),
+                    (f"/npz/{name}/recall", float(recall)),
+                    (f"/npz/{name}/F1", float(f1)),
+                    (f"/npz/{name}/support", float(support)),
+                ])
+            bins = np.linspace(0.0, 1.0, 16)
+            ece = 0.0
+            for lo, hi in zip(bins[:-1], bins[1:]):
+                m = (conf > lo) & (conf <= hi) if lo > 0 else (conf >= lo) & (conf <= hi)
+                if m.any():
+                    ece += m.mean() * abs(acc[m].mean() - conf[m].mean())
+            leaves += [
+                ("/npz/overall accuracy", float(acc.mean())),
+                ("/npz/macro F1", float(np.mean(class_f1))),
+                ("/npz/ECE", float(ece)),
+                ("/npz/known mean max-softmax", float(conf.mean())),
+                ("/npz/held-out mean max-softmax", float(b["holdout_conf"].mean())),
+                ("/npz/held-out mean entropy", float(b["holdout_entropy"].mean())),
+            ]
+            for i, name in enumerate(["Benign", "DDoS-UDP_Flood", "DoS-TCP_Flood", "Recon-PortScan"]):
+                leaves.append((f"/npz/held-out -> {name}", float(b["holdout_pred_dist"][i])))
         print(f"\nBaseline numbers searched in {args.baseline_json} ({len(leaves)} numeric values found):")
         for name, q, dec in BASELINE_CLAIMS:
             hits = [p for p, v in leaves if close(v, q, dec)]

@@ -1,0 +1,6 @@
+{
+  "model": "resnet18_protocol_adv_trained",
+  "test_accuracy": 0.9018,
+  "macro_f1": 0.794,
+  "ECE": 0.051
+}

@@ -81,10 +81,10 @@ def build_inputs(sel):
 def pgd_batch(model, x0, y, mask, eps_pix, alpha_pix, steps):
     dp = torch.zeros_like(x0)
     for _ in range(steps):
-        dp.requires_grad_(True)
-        loss = F.cross_entropy(model((x0 + dp).clamp(0, 1)), y, reduction="sum")
-        g, = torch.autograd.grad(loss, dp)
-        dp = (dp.detach() + alpha_pix * g.sign() * mask).clamp(-eps_pix, eps_pix) * mask
+        xa = (x0 + dp).clamp(0, 1).detach().requires_grad_(True)
+        loss = F.cross_entropy(model(xa), y, reduction="sum")
+        g, = torch.autograd.grad(loss, xa)
+        dp = (dp + alpha_pix * g.sign() * mask).clamp(-eps_pix, eps_pix) * mask
     return ((x0 + dp).clamp(0, 1) * 255.0).round() / 255.0
 
 

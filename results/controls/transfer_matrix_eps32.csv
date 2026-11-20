@@ -1,0 +1,17 @@
+source,target,flips,n_correct,flip_rate
+base,base,38,234,0.1624
+base,seed0,5,223,0.0224
+base,seed1,10,230,0.0435
+base,seed2,5,217,0.023
+seed0,base,10,234,0.0427
+seed0,seed0,34,223,0.1525
+seed0,seed1,12,230,0.0522
+seed0,seed2,4,217,0.0184
+seed1,base,8,234,0.0342
+seed1,seed0,6,223,0.0269
+seed1,seed1,61,230,0.2652
+seed1,seed2,8,217,0.0369
+seed2,base,7,234,0.0299
+seed2,seed0,3,223,0.0135
+seed2,seed1,11,230,0.0478
+seed2,seed2,22,217,0.1014

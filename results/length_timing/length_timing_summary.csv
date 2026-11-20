@@ -1,0 +1,16 @@
+arm,class,correct_clean,flips,flip_rate,to_benign,mean_pad_bytes,mean_delay_sec,valid_rate,hdr_violations
+pad_only_256B,DDoS-UDP_Flood,26,11,0.4231,0,1067.0,0.0,1.0,0
+pad_only_256B,DoS-TCP_Flood,2,0,0.0,0,0.0,0.0,1.0,0
+pad_only_256B,Recon-PortScan,143,1,0.007,0,47.92,0.0,1.0,0
+pad_only_1024B,DDoS-UDP_Flood,26,24,0.9231,0,955.81,0.0,1.0,0
+pad_only_1024B,DoS-TCP_Flood,2,0,0.0,0,0.0,0.0,1.0,0
+pad_only_1024B,Recon-PortScan,143,8,0.0559,0,137.77,0.0,1.0,0
+timing_only_100ms,DDoS-UDP_Flood,26,7,0.2692,4,0.0,0.2943,1.0,0
+timing_only_100ms,DoS-TCP_Flood,2,2,1.0,0,0.0,0.0697,1.0,0
+timing_only_100ms,Recon-PortScan,143,8,0.0559,5,0.0,0.355,1.0,0
+timing_only_1000ms,DDoS-UDP_Flood,26,26,1.0,22,0.0,2.0543,1.0,0
+timing_only_1000ms,DoS-TCP_Flood,2,2,1.0,0,0.0,0.6974,1.0,0
+timing_only_1000ms,Recon-PortScan,143,82,0.5734,29,0.0,2.6434,1.0,0
+joint_pad1024B_delay1000ms,DDoS-UDP_Flood,26,25,0.9615,0,914.35,0.7109,1.0,0
+joint_pad1024B_delay1000ms,DoS-TCP_Flood,2,2,1.0,0,131.0,0.4504,1.0,0
+joint_pad1024B_delay1000ms,Recon-PortScan,143,87,0.6084,23,2464.68,3.0977,1.0,0

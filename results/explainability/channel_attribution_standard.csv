@@ -1,0 +1,5 @@
+model,class,ch0_ip_hdr,ch0_l4_hdr,ch0_payload,ch1_length,ch2_timing
+standard,Benign,0.14,0.2996,0.0856,0.0889,0.3859
+standard,DDoS-UDP_Flood,0.4368,0.0049,0.4021,0.136,0.0202
+standard,DoS-TCP_Flood,0.1114,0.377,0.0071,0.2125,0.292
+standard,Recon-PortScan,0.1167,0.3048,0.0382,0.2507,0.2897
