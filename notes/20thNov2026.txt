@@ -1,0 +1,577 @@
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> Get-ChildItem -Recurse -Filter "attack_controls.py"
+
+
+    Directory: C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic\scripts
+
+
+Mode                 LastWriteTime         Length Name                                                                         
+----                 -------------         ------ ----                                                                         
+-a----        11/20/2026   3:29 PM          10729 attack_controls.py                                                           
+
+
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> python scripts\attack_controls.py
+device cpu | model results/metrics/resnet18_pcap_model.pth | budgets [1, 4, 16, 32] | steps 25
+Traceback (most recent call last):
+  File "C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic\scripts\attack_controls.py", line 203, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic\scripts\attack_controls.py", line 115, in main
+    _, flows = load_cache(args.cache)
+               ~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic\scripts\audit_utils.py", line 40, in load_cache
+    sig, flows = pickle.load(open(path or CACHE_PATH, "rb"))
+                             ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data\\flows_cache.pkl'
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> python -c "import pickle,sys; sys.path.insert(0,'scripts'); import adversarial_attack as a; sig=('v3-earlybreak',tuple(a.ATTACK_CLASSES),a.MAX_PKTS_PER_FLOW,a.MAX_FLOWS_STORED_PER_CLASS); flows=a.load_flows(a.DATA_DIR); a.CACHE_PATH.parent.mkdir(parents=True,exist_ok=True); a.CACHE_PATH.write_bytes(pickle.dumps((sig,flows),protocol=pickle.HIGHEST_PROTOCOL)); print('Cached',len(flows),'flows')"
+  parsing DDoS-UDP_Flood/DDoS-UDP_Flood.pcap ...
+    100,000 packets | 370 flows stored, 104 full
+    200,000 packets | 486 flows stored, 204 full
+    300,000 packets | 600 flows stored, 293 full
+    400,000 packets | 600 flows stored, 293 full
+    500,000 packets | 600 flows stored, 293 full
+    600,000 packets | 600 flows stored, 293 full
+    early break: nothing more can be stored
+    scanned 600,000 packets | 600 flows stored (293 full)
+  parsing DictionaryBruteForce/DictionaryBruteForce.pcap ...
+    100,000 packets | 600 flows stored, 89 full
+    scanned 133,138 packets | 600 flows stored (94 full)
+  parsing DoS-TCP_Flood/DoS-TCP_Flood2.pcap ...
+    100,000 packets | 600 flows stored, 0 full
+    200,000 packets | 600 flows stored, 1 full
+    300,000 packets | 600 flows stored, 1 full
+    early break: nothing more can be stored
+    scanned 300,000 packets | 600 flows stored (1 full)
+  parsing Recon-PortScan/Recon-PortScan.pcap ...
+    100,000 packets | 600 flows stored, 78 full
+    200,000 packets | 600 flows stored, 92 full
+    300,000 packets | 600 flows stored, 101 full
+    400,000 packets | 600 flows stored, 105 full
+    early break: nothing more can be stored
+    scanned 400,000 packets | 600 flows stored (105 full)
+Cached 2070 flows
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> python scripts\attack_controls.py                                                                                                                                                           
+device cpu | model results/metrics/resnet18_pcap_model.pth | budgets [1, 4, 16, 32] | steps 25                                      
+600 flows | with editable payload: 318 | known-class: 450
+  arm payload done
+  arm ch0_bytes done
+  arm all_pixels done
+  arm random_payload done
+  arm random_all done
+
+Flip rates, flows WITH editable payload (the comparable set)   [flips / flows correct before the attack]
+  DDoS-UDP_Flood
+    payload        eps1: 0/94  eps4: 0/94  eps16: 2/94  eps32: 10/94
+    ch0_bytes      eps1: 1/94  eps4: 2/94  eps16: 20/94  eps32: 94/94
+    all_pixels     eps1: 1/94  eps4: 11/94  eps16: 94/94  eps32: 94/94
+    random_payload eps1: 0/94  eps4: 0/94  eps16: 0/94  eps32: 0/94
+    random_all     eps1: 0/94  eps4: 0/94  eps16: 0/94  eps32: 0/94
+  Recon-PortScan
+    payload        eps1: 0/86  eps4: 1/86  eps16: 6/86  eps32: 13/86
+    ch0_bytes      eps1: 1/86  eps4: 7/86  eps16: 25/86  eps32: 67/86
+    all_pixels     eps1: 4/86  eps4: 27/86  eps16: 85/86  eps32: 86/86
+    random_payload eps1: 0/86  eps4: 0/86  eps16: 0/86  eps32: 0/86
+    random_all     eps1: 0/86  eps4: 0/86  eps16: 0/86  eps32: 1/86
+  DoS-TCP_Flood
+    payload        eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    ch0_bytes      eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    all_pixels     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_payload eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_all     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+
+Flip rates, ALL sampled flows (incl. those with no editable payload)   [flips / flows correct before the attack]
+  DDoS-UDP_Flood
+    payload        eps1: 0/95  eps4: 0/95  eps16: 2/95  eps32: 10/95
+    ch0_bytes      eps1: 2/95  eps4: 3/95  eps16: 21/95  eps32: 95/95
+    all_pixels     eps1: 2/95  eps4: 12/95  eps16: 95/95  eps32: 95/95
+    random_payload eps1: 0/95  eps4: 0/95  eps16: 0/95  eps32: 0/95
+    random_all     eps1: 0/95  eps4: 0/95  eps16: 1/95  eps32: 0/95
+  Recon-PortScan
+    payload        eps1: 0/137  eps4: 1/137  eps16: 6/137  eps32: 13/137
+    ch0_bytes      eps1: 1/137  eps4: 7/137  eps16: 30/137  eps32: 82/137
+    all_pixels     eps1: 4/137  eps4: 37/137  eps16: 136/137  eps32: 137/137
+    random_payload eps1: 0/137  eps4: 0/137  eps16: 0/137  eps32: 0/137
+    random_all     eps1: 0/137  eps4: 0/137  eps16: 0/137  eps32: 1/137
+  DoS-TCP_Flood
+    payload        eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    ch0_bytes      eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    all_pixels     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_payload eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_all     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+
+Sanity check, 'payload' arm (image space) vs the official run (after packet realisation):
+  eps  1 DDoS-UDP_Flood   official 0/94   here 0/94
+  eps  1 Recon-PortScan   official 0/86   here 0/86
+  eps  4 DDoS-UDP_Flood   official 0/94   here 0/94
+  eps  4 Recon-PortScan   official 1/86   here 1/86
+  eps 16 DDoS-UDP_Flood   official 2/94   here 2/94
+  eps 16 Recon-PortScan   official 6/86   here 6/86
+  eps 32 DDoS-UDP_Flood   official 10/94   here 10/94
+  eps 32 Recon-PortScan   official 13/86   here 13/86
+  (small differences are expected: the official run used a different batching order; large ones mean a setting differs)
+
+wrote results\controls/controls_summary_base.csv and controls_per_sample_base.npz
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> 
+
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> python scripts\attack_controls.py --ckpt results/metrics/resnet18_seed0.pth --tag seed0
+device cpu | model results/metrics/resnet18_seed0.pth | budgets [1, 4, 16, 32] | steps 25
+600 flows | with editable payload: 318 | known-class: 450
+  arm payload done
+  arm ch0_bytes done
+  arm all_pixels done
+  arm random_payload done
+  arm random_all done
+
+Flip rates, flows WITH editable payload (the comparable set)   [flips / flows correct before the attack]
+  DDoS-UDP_Flood
+    payload        eps1: 0/91  eps4: 0/91  eps16: 0/91  eps32: 11/91
+    ch0_bytes      eps1: 0/91  eps4: 0/91  eps16: 12/91  eps32: 90/91
+    all_pixels     eps1: 0/91  eps4: 3/91  eps16: 91/91  eps32: 91/91
+    random_payload eps1: 0/91  eps4: 0/91  eps16: 0/91  eps32: 0/91
+    random_all     eps1: 0/91  eps4: 0/91  eps16: 0/91  eps32: 1/91
+  Recon-PortScan
+    payload        eps1: 0/82  eps4: 0/82  eps16: 6/82  eps32: 12/82
+    ch0_bytes      eps1: 1/82  eps4: 6/82  eps16: 20/82  eps32: 67/82
+    all_pixels     eps1: 4/82  eps4: 25/82  eps16: 82/82  eps32: 82/82
+    random_payload eps1: 0/82  eps4: 0/82  eps16: 0/82  eps32: 0/82
+    random_all     eps1: 0/82  eps4: 1/82  eps16: 0/82  eps32: 1/82
+  DoS-TCP_Flood
+    payload        eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    ch0_bytes      eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    all_pixels     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_payload eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_all     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+
+Flip rates, ALL sampled flows (incl. those with no editable payload)   [flips / flows correct before the attack]
+  DDoS-UDP_Flood
+    payload        eps1: 0/91  eps4: 0/91  eps16: 0/91  eps32: 11/91
+    ch0_bytes      eps1: 0/91  eps4: 0/91  eps16: 12/91  eps32: 90/91
+    all_pixels     eps1: 0/91  eps4: 3/91  eps16: 91/91  eps32: 91/91
+    random_payload eps1: 0/91  eps4: 0/91  eps16: 0/91  eps32: 0/91
+    random_all     eps1: 0/91  eps4: 0/91  eps16: 0/91  eps32: 1/91
+  Recon-PortScan
+    payload        eps1: 0/135  eps4: 0/135  eps16: 6/135  eps32: 12/135
+    ch0_bytes      eps1: 5/135  eps4: 11/135  eps16: 30/135  eps32: 84/135
+    all_pixels     eps1: 9/135  eps4: 39/135  eps16: 134/135  eps32: 135/135
+    random_payload eps1: 0/135  eps4: 0/135  eps16: 0/135  eps32: 0/135
+    random_all     eps1: 0/135  eps4: 2/135  eps16: 1/135  eps32: 1/135
+  DoS-TCP_Flood
+    payload        eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    ch0_bytes      eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    all_pixels     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_payload eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_all     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+
+Sanity check, 'payload' arm (image space) vs the official run (after packet realisation):
+  eps  1 DDoS-UDP_Flood   official 0/94   here 0/91
+  eps  1 Recon-PortScan   official 0/86   here 0/82
+  eps  4 DDoS-UDP_Flood   official 0/94   here 0/91
+  eps  4 Recon-PortScan   official 1/86   here 0/82
+  eps 16 DDoS-UDP_Flood   official 2/94   here 0/91
+  eps 16 Recon-PortScan   official 6/86   here 6/82
+  eps 32 DDoS-UDP_Flood   official 10/94   here 11/91
+  eps 32 Recon-PortScan   official 13/86   here 12/82
+  (small differences are expected: the official run used a different batching order; large ones mean a setting differs)
+
+wrote results\controls/controls_summary_seed0.csv and controls_per_sample_seed0.npz
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> python scripts\attack_controls.py --ckpt results/metrics/resnet18_seed1.pth --tag seed1
+device cpu | model results/metrics/resnet18_seed1.pth | budgets [1, 4, 16, 32] | steps 25
+600 flows | with editable payload: 318 | known-class: 450
+  arm payload done
+  arm ch0_bytes done
+  arm all_pixels done
+  arm random_payload done
+  arm random_all done
+
+Flip rates, flows WITH editable payload (the comparable set)   [flips / flows correct before the attack]
+  DDoS-UDP_Flood
+    payload        eps1: 0/96  eps4: 1/96  eps16: 2/96  eps32: 29/96
+    ch0_bytes      eps1: 0/96  eps4: 1/96  eps16: 31/96  eps32: 94/96
+    all_pixels     eps1: 1/96  eps4: 20/96  eps16: 96/96  eps32: 96/96
+    random_payload eps1: 0/96  eps4: 0/96  eps16: 0/96  eps32: 1/96
+    random_all     eps1: 0/96  eps4: 0/96  eps16: 2/96  eps32: 1/96
+  Recon-PortScan
+    payload        eps1: 2/85  eps4: 4/85  eps16: 8/85  eps32: 15/85
+    ch0_bytes      eps1: 3/85  eps4: 10/85  eps16: 34/85  eps32: 78/85
+    all_pixels     eps1: 8/85  eps4: 37/85  eps16: 85/85  eps32: 85/85
+    random_payload eps1: 0/85  eps4: 0/85  eps16: 0/85  eps32: 1/85
+    random_all     eps1: 0/85  eps4: 0/85  eps16: 2/85  eps32: 8/85
+  DoS-TCP_Flood
+    payload        eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    ch0_bytes      eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    all_pixels     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_payload eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_all     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+
+Flip rates, ALL sampled flows (incl. those with no editable payload)   [flips / flows correct before the attack]
+  DDoS-UDP_Flood
+    payload        eps1: 0/98  eps4: 1/98  eps16: 2/98  eps32: 29/98
+    ch0_bytes      eps1: 1/98  eps4: 2/98  eps16: 33/98  eps32: 96/98
+    all_pixels     eps1: 2/98  eps4: 22/98  eps16: 98/98  eps32: 98/98
+    random_payload eps1: 0/98  eps4: 0/98  eps16: 0/98  eps32: 1/98
+    random_all     eps1: 0/98  eps4: 0/98  eps16: 2/98  eps32: 1/98
+  Recon-PortScan
+    payload        eps1: 2/135  eps4: 4/135  eps16: 8/135  eps32: 15/135
+    ch0_bytes      eps1: 3/135  eps4: 10/135  eps16: 52/135  eps32: 124/135
+    all_pixels     eps1: 15/135  eps4: 78/135  eps16: 135/135  eps32: 135/135
+    random_payload eps1: 0/135  eps4: 0/135  eps16: 0/135  eps32: 1/135
+    random_all     eps1: 0/135  eps4: 0/135  eps16: 2/135  eps32: 16/135
+  DoS-TCP_Flood
+    payload        eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    ch0_bytes      eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    all_pixels     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_payload eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_all     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+
+Sanity check, 'payload' arm (image space) vs the official run (after packet realisation):
+  eps  1 DDoS-UDP_Flood   official 0/94   here 0/96
+  eps  1 Recon-PortScan   official 0/86   here 2/85
+  eps  4 DDoS-UDP_Flood   official 0/94   here 1/96
+  eps  4 Recon-PortScan   official 1/86   here 4/85
+  eps 16 DDoS-UDP_Flood   official 2/94   here 2/96
+  eps 16 Recon-PortScan   official 6/86   here 8/85
+  eps 32 DDoS-UDP_Flood   official 10/94   here 29/96
+  eps 32 Recon-PortScan   official 13/86   here 15/85
+  (small differences are expected: the official run used a different batching order; large ones mean a setting differs)
+
+wrote results\controls/controls_summary_seed1.csv and controls_per_sample_seed1.npz
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> python scripts\attack_controls.py --ckpt results/metrics/resnet18_seed2.pth --tag seed2
+device cpu | model results/metrics/resnet18_seed2.pth | budgets [1, 4, 16, 32] | steps 25
+600 flows | with editable payload: 318 | known-class: 450
+  arm payload done
+  arm ch0_bytes done
+  arm all_pixels done
+  arm random_payload done
+  arm random_all done
+
+Flip rates, flows WITH editable payload (the comparable set)   [flips / flows correct before the attack]
+  DDoS-UDP_Flood
+    payload        eps1: 0/95  eps4: 2/95  eps16: 4/95  eps32: 5/95
+    ch0_bytes      eps1: 2/95  eps4: 4/95  eps16: 17/95  eps32: 81/95
+    all_pixels     eps1: 3/95  eps4: 9/95  eps16: 95/95  eps32: 95/95
+    random_payload eps1: 0/95  eps4: 0/95  eps16: 0/95  eps32: 2/95
+    random_all     eps1: 0/95  eps4: 1/95  eps16: 2/95  eps32: 2/95
+  Recon-PortScan
+    payload        eps1: 1/91  eps4: 1/91  eps16: 6/91  eps32: 15/91
+    ch0_bytes      eps1: 1/91  eps4: 7/91  eps16: 26/91  eps32: 76/91
+    all_pixels     eps1: 6/91  eps4: 28/91  eps16: 91/91  eps32: 91/91
+    random_payload eps1: 0/91  eps4: 0/91  eps16: 0/91  eps32: 0/91
+    random_all     eps1: 0/91  eps4: 0/91  eps16: 1/91  eps32: 0/91
+  DoS-TCP_Flood
+    payload        eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    ch0_bytes      eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    all_pixels     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_payload eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_all     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+
+Flip rates, ALL sampled flows (incl. those with no editable payload)   [flips / flows correct before the attack]
+  DDoS-UDP_Flood
+    payload        eps1: 0/96  eps4: 2/96  eps16: 4/96  eps32: 5/96
+    ch0_bytes      eps1: 2/96  eps4: 4/96  eps16: 18/96  eps32: 82/96
+    all_pixels     eps1: 3/96  eps4: 10/96  eps16: 96/96  eps32: 96/96
+    random_payload eps1: 0/96  eps4: 0/96  eps16: 0/96  eps32: 2/96
+    random_all     eps1: 0/96  eps4: 1/96  eps16: 2/96  eps32: 2/96
+  Recon-PortScan
+    payload        eps1: 1/147  eps4: 1/147  eps16: 6/147  eps32: 15/147
+    ch0_bytes      eps1: 3/147  eps4: 11/147  eps16: 38/147  eps32: 97/147
+    all_pixels     eps1: 12/147  eps4: 51/147  eps16: 145/147  eps32: 147/147
+    random_payload eps1: 0/147  eps4: 0/147  eps16: 0/147  eps32: 0/147
+    random_all     eps1: 0/147  eps4: 0/147  eps16: 2/147  eps32: 0/147
+  DoS-TCP_Flood
+    payload        eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    ch0_bytes      eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    all_pixels     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_payload eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+    random_all     eps1: 0/0  eps4: 0/0  eps16: 0/0  eps32: 0/0
+
+Sanity check, 'payload' arm (image space) vs the official run (after packet realisation):
+  eps  1 DDoS-UDP_Flood   official 0/94   here 0/95
+  eps  1 Recon-PortScan   official 0/86   here 1/91
+  eps  4 DDoS-UDP_Flood   official 0/94   here 2/95
+  eps  4 Recon-PortScan   official 1/86   here 1/91
+  eps 16 DDoS-UDP_Flood   official 2/94   here 4/95
+  eps 16 Recon-PortScan   official 6/86   here 6/91
+  eps 32 DDoS-UDP_Flood   official 10/94   here 5/95
+  eps 32 Recon-PortScan   official 13/86   here 15/91
+  (small differences are expected: the official run used a different batching order; large ones mean a setting differs)
+
+wrote results\controls/controls_summary_seed2.csv and controls_per_sample_seed2.npz
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic
+
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> python scripts\transfer.py
+
+4x4 Transfer Matrix (Flip Rate at eps=32 on editable known-class flows):
+source \ target  base            seed0           seed1           seed2         
+base            38/234 (0.162)  5/223 (0.022)   10/230 (0.043)  5/217 (0.023) 
+seed0           10/234 (0.043)  34/223 (0.152)  12/230 (0.052)  4/217 (0.018) 
+seed1           8/234 (0.034)   6/223 (0.027)   61/230 (0.265)  8/217 (0.037) 
+seed2           7/234 (0.030)   3/223 (0.013)   11/230 (0.048)  22/217 (0.101)
+
+Saved results\controls\transfer_matrix_eps32.csv
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> 
+
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> 
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> python scripts\train.py
+Using device: cpu | seed: 42
+
+[TRAIN] Active Classes: {'Benign': 0, 'DDoS-UDP_Flood': 1, 'DoS-TCP_Flood': 2, 'Recon-PortScan': 3}
+  Benign                 | valid_flows=1627 (dropped<4=1931) | split_flows=1138 | windows=2176
+  DDoS-UDP_Flood         | valid_flows=184 (dropped<4=129) | split_flows=128 | windows=187
+  DoS-TCP_Flood          | valid_flows=75 (dropped<4=65684) | split_flows=52 | windows=61
+  Recon-PortScan         | valid_flows=1259 (dropped<4=14904) | split_flows=881 | windows=1413
+
+[VAL] Active Classes: {'Benign': 0, 'DDoS-UDP_Flood': 1, 'DoS-TCP_Flood': 2, 'Recon-PortScan': 3}
+  Benign                 | valid_flows=1627 (dropped<4=1931) | split_flows=244 | windows=300
+  DDoS-UDP_Flood         | valid_flows=184 (dropped<4=129) | split_flows=28 | windows=503
+  DoS-TCP_Flood          | valid_flows=75 (dropped<4=65684) | split_flows=11 | windows=12
+  Recon-PortScan         | valid_flows=1259 (dropped<4=14904) | split_flows=189 | windows=472
+
+[TEST] Active Classes: {'Benign': 0, 'DDoS-UDP_Flood': 1, 'DoS-TCP_Flood': 2, 'Recon-PortScan': 3}
+  Benign                 | valid_flows=1627 (dropped<4=1931) | split_flows=245 | windows=260
+  DDoS-UDP_Flood         | valid_flows=184 (dropped<4=129) | split_flows=28 | windows=505
+  DoS-TCP_Flood          | valid_flows=75 (dropped<4=65684) | split_flows=12 | windows=12
+  Recon-PortScan         | valid_flows=1259 (dropped<4=14904) | split_flows=189 | windows=262
+Starting Epoch 1/8...
+Epoch [1/8] | Train Loss: 0.5630 | Train Acc: 77.51% | Val Acc: 76.77% | Val Macro-F1: 0.6351 | Val ECE: 0.1000
+Starting Epoch 2/8...
+Epoch [2/8] | Train Loss: 0.3548 | Train Acc: 85.74% | Val Acc: 86.64% | Val Macro-F1: 0.7248 | Val ECE: 0.0717
+Starting Epoch 3/8...
+Epoch [3/8] | Train Loss: 0.2696 | Train Acc: 89.16% | Val Acc: 80.65% | Val Macro-F1: 0.7062 | Val ECE: 0.0847
+Starting Epoch 4/8...
+Epoch [4/8] | Train Loss: 0.2309 | Train Acc: 91.11% | Val Acc: 86.56% | Val Macro-F1: 0.8024 | Val ECE: 0.0484
+Starting Epoch 5/8...
+Epoch [5/8] | Train Loss: 0.1772 | Train Acc: 92.75% | Val Acc: 83.99% | Val Macro-F1: 0.7537 | Val ECE: 0.0903
+Starting Epoch 6/8...
+Epoch [6/8] | Train Loss: 0.1440 | Train Acc: 94.50% | Val Acc: 82.75% | Val Macro-F1: 0.7560 | Val ECE: 0.1124
+Starting Epoch 7/8...
+Epoch [7/8] | Train Loss: 0.1455 | Train Acc: 94.84% | Val Acc: 85.55% | Val Macro-F1: 0.8076 | Val ECE: 0.0661
+Starting Epoch 8/8...
+Epoch [8/8] | Train Loss: 0.1007 | Train Acc: 96.22% | Val Acc: 83.76% | Val Macro-F1: 0.7925 | Val ECE: 0.0971
+
+=== HELD-OUT TEST RESULTS (Best Val Checkpoint) ===
+Test Accuracy: 0.8691 | Macro-F1: 0.7222 | ECE: 0.0497
+                precision    recall  f1-score   support
+
+        Benign     0.9366    0.9654    0.9508       260
+DDoS-UDP_Flood     0.9741    0.8178    0.8891       505
+ DoS-TCP_Flood     0.6667    0.1667    0.2667        12
+Recon-PortScan     0.6890    0.9046    0.7822       262
+
+      accuracy                         0.8691      1039
+     macro avg     0.8166    0.7136    0.7222      1039
+  weighted avg     0.8892    0.8691    0.8704      1039
+
+
+[ALL] Active Classes: {'DictionaryBruteForce': 0}
+  DictionaryBruteForce   | valid_flows=1301 (dropped<4=1096) | split_flows=1301 | windows=3038
+Saved held-out test metrics to results/metrics/eval_baseline_summary.json and eval_baseline.npz
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> 
+
+
+
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> python scripts\length_timing_attack.py
+Loaded 340 held-out test flows on cpu
+
+Running arm: pad_only_256B...
+  DDoS-UDP_Flood     | flips: 11/26 (0.423) | to_Benign: 0 | mean_pad=1067.0B | mean_delay=0.000s | valid=1.000 | violations=0
+  DoS-TCP_Flood      | flips: 0/2 (0.000) | to_Benign: 0 | mean_pad=0.0B | mean_delay=0.000s | valid=1.000 | violations=0
+  Recon-PortScan     | flips: 1/143 (0.007) | to_Benign: 0 | mean_pad=47.9B | mean_delay=0.000s | valid=1.000 | violations=0
+
+Running arm: pad_only_1024B...
+  DDoS-UDP_Flood     | flips: 24/26 (0.923) | to_Benign: 0 | mean_pad=955.8B | mean_delay=0.000s | valid=1.000 | violations=0
+  DoS-TCP_Flood      | flips: 0/2 (0.000) | to_Benign: 0 | mean_pad=0.0B | mean_delay=0.000s | valid=1.000 | violations=0
+  Recon-PortScan     | flips: 8/143 (0.056) | to_Benign: 0 | mean_pad=137.8B | mean_delay=0.000s | valid=1.000 | violations=0
+
+Running arm: timing_only_100ms...
+  DDoS-UDP_Flood     | flips: 7/26 (0.269) | to_Benign: 4 | mean_pad=0.0B | mean_delay=0.294s | valid=1.000 | violations=0
+  DoS-TCP_Flood      | flips: 2/2 (1.000) | to_Benign: 0 | mean_pad=0.0B | mean_delay=0.070s | valid=1.000 | violations=0
+  Recon-PortScan     | flips: 8/143 (0.056) | to_Benign: 5 | mean_pad=0.0B | mean_delay=0.355s | valid=1.000 | violations=0
+
+Running arm: timing_only_1000ms...
+  DDoS-UDP_Flood     | flips: 26/26 (1.000) | to_Benign: 22 | mean_pad=0.0B | mean_delay=2.054s | valid=1.000 | violations=0
+  DoS-TCP_Flood      | flips: 2/2 (1.000) | to_Benign: 0 | mean_pad=0.0B | mean_delay=0.697s | valid=1.000 | violations=0
+  Recon-PortScan     | flips: 82/143 (0.573) | to_Benign: 29 | mean_pad=0.0B | mean_delay=2.643s | valid=1.000 | violations=0
+
+Running arm: joint_pad1024B_delay1000ms...
+  DDoS-UDP_Flood     | flips: 25/26 (0.962) | to_Benign: 0 | mean_pad=914.3B | mean_delay=0.711s | valid=1.000 | violations=0
+  DoS-TCP_Flood      | flips: 2/2 (1.000) | to_Benign: 0 | mean_pad=131.0B | mean_delay=0.450s | valid=1.000 | violations=0
+  Recon-PortScan     | flips: 87/143 (0.608) | to_Benign: 23 | mean_pad=2464.7B | mean_delay=3.098s | valid=1.000 | violations=0
+
+Saved results\length_timing\length_timing_summary.csv
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> 
+
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> python scripts\explainability.py
+
+[TEST] Active Classes: {'Benign': 0, 'DDoS-UDP_Flood': 1, 'DoS-TCP_Flood': 2, 'Recon-PortScan': 3}
+  Benign                 | valid_flows=1627 (dropped<4=1931) | split_flows=245 | windows=260
+  DDoS-UDP_Flood         | valid_flows=184 (dropped<4=129) | split_flows=28 | windows=505
+  DoS-TCP_Flood          | valid_flows=75 (dropped<4=65684) | split_flows=12 | windows=12
+  Recon-PortScan         | valid_flows=1259 (dropped<4=14904) | split_flows=189 | windows=262
+
+Input Attribution Share (Gradient x Input) [standard]:
+Class                IP_Hdr   L4_Hdr  Payload  Ch1_Len  Ch2_Time
+Benign                0.140    0.300    0.086    0.089     0.386
+DDoS-UDP_Flood        0.437    0.005    0.402    0.136     0.020
+DoS-TCP_Flood         0.111    0.377    0.007    0.212     0.292
+Recon-PortScan        0.117    0.305    0.038    0.251     0.290
+Saved results\explainability\channel_attribution_standard.csv
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> python scripts/train_adv.py
+Protocol-Aware Adversarial Training on cpu | seed: 42
+
+[TRAIN] Active Classes: {'Benign': 0, 'DDoS-UDP_Flood': 1, 'DoS-TCP_Flood': 2, 'Recon-PortScan': 3}
+  Benign                 | valid_flows=1627 (dropped<4=1931) | split_flows=1138 | windows=2176
+  DDoS-UDP_Flood         | valid_flows=184 (dropped<4=129) | split_flows=128 | windows=187
+  DoS-TCP_Flood          | valid_flows=75 (dropped<4=65684) | split_flows=52 | windows=61
+  Recon-PortScan         | valid_flows=1259 (dropped<4=14904) | split_flows=881 | windows=1413
+
+[VAL] Active Classes: {'Benign': 0, 'DDoS-UDP_Flood': 1, 'DoS-TCP_Flood': 2, 'Recon-PortScan': 3}
+  Benign                 | valid_flows=1627 (dropped<4=1931) | split_flows=244 | windows=300
+  DDoS-UDP_Flood         | valid_flows=184 (dropped<4=129) | split_flows=28 | windows=503
+  DoS-TCP_Flood          | valid_flows=75 (dropped<4=65684) | split_flows=11 | windows=12
+  Recon-PortScan         | valid_flows=1259 (dropped<4=14904) | split_flows=189 | windows=472
+
+[TEST] Active Classes: {'Benign': 0, 'DDoS-UDP_Flood': 1, 'DoS-TCP_Flood': 2, 'Recon-PortScan': 3}
+  Benign                 | valid_flows=1627 (dropped<4=1931) | split_flows=245 | windows=260
+  DDoS-UDP_Flood         | valid_flows=184 (dropped<4=129) | split_flows=28 | windows=505
+  DoS-TCP_Flood          | valid_flows=75 (dropped<4=65684) | split_flows=12 | windows=12
+  Recon-PortScan         | valid_flows=1259 (dropped<4=14904) | split_flows=189 | windows=262
+Starting Adv Epoch 1/8...
+Epoch [1/8] | Loss: 0.6436 | Clean Train Acc: 77.61% | Val Acc: 79.10% | Val Macro-F1: 0.6253 | Val ECE: 0.1644
+Starting Adv Epoch 2/8...
+Epoch [2/8] | Loss: 0.4868 | Clean Train Acc: 83.24% | Val Acc: 80.89% | Val Macro-F1: 0.6471 | Val ECE: 0.0443
+Starting Adv Epoch 3/8...
+Epoch [3/8] | Loss: 0.4249 | Clean Train Acc: 86.89% | Val Acc: 82.36% | Val Macro-F1: 0.7248 | Val ECE: 0.0516
+Starting Adv Epoch 4/8...
+Epoch [4/8] | Loss: 0.3718 | Clean Train Acc: 89.71% | Val Acc: 85.78% | Val Macro-F1: 0.7728 | Val ECE: 0.0486
+Starting Adv Epoch 5/8...
+Epoch [5/8] | Loss: 0.3192 | Clean Train Acc: 92.10% | Val Acc: 82.75% | Val Macro-F1: 0.7704 | Val ECE: 0.0789
+Starting Adv Epoch 6/8...
+Epoch [6/8] | Loss: 0.2709 | Clean Train Acc: 94.03% | Val Acc: 86.95% | Val Macro-F1: 0.8161 | Val ECE: 0.0600
+Starting Adv Epoch 7/8...
+Epoch [7/8] | Loss: 0.2438 | Clean Train Acc: 95.10% | Val Acc: 85.94% | Val Macro-F1: 0.7756 | Val ECE: 0.0578
+Starting Adv Epoch 8/8...
+Epoch [8/8] | Loss: 0.2148 | Clean Train Acc: 95.93% | Val Acc: 87.41% | Val Macro-F1: 0.8411 | Val ECE: 0.0777
+
+=== ADV-TRAINED HELD-OUT TEST RESULTS ===
+Test Accuracy: 0.9018 | Macro-F1: 0.7940 | ECE: 0.0510
+                precision    recall  f1-score   support
+
+        Benign     0.9236    0.9769    0.9495       260
+DDoS-UDP_Flood     0.9695    0.8812    0.9232       505
+ DoS-TCP_Flood     0.8000    0.3333    0.4706        12
+Recon-PortScan     0.7800    0.8931    0.8327       262
+
+      accuracy                         0.9018      1039
+     macro avg     0.8683    0.7711    0.7940      1039
+  weighted avg     0.9083    0.9018    0.9018      1039
+
+
+=== EVALUATING DEFENDED MODEL AGAINST STEP 7 LENGTH/TIMING ATTACKS ===
+Arm: pad_only_1024B
+  DDoS-UDP_Flood     | flips: 25/27 (0.926) | to_Benign: 0
+  DoS-TCP_Flood      | flips: 0/4 (0.000) | to_Benign: 0
+  Recon-PortScan     | flips: 6/142 (0.042) | to_Benign: 1
+Arm: timing_only_1000ms
+  DDoS-UDP_Flood     | flips: 27/27 (1.000) | to_Benign: 15
+  DoS-TCP_Flood      | flips: 4/4 (1.000) | to_Benign: 0
+  Recon-PortScan     | flips: 113/142 (0.796) | to_Benign: 55
+Arm: joint_pad1024B_delay1000ms
+  DDoS-UDP_Flood     | flips: 25/27 (0.926) | to_Benign: 0
+  DoS-TCP_Flood      | flips: 4/4 (1.000) | to_Benign: 0
+  Recon-PortScan     | flips: 117/142 (0.824) | to_Benign: 50
+Saved results\length_timing\length_timing_summary_adv_trained.csv
+
+[TEST] Active Classes: {'Benign': 0, 'DDoS-UDP_Flood': 1, 'DoS-TCP_Flood': 2, 'Recon-PortScan': 3}
+  Benign                 | valid_flows=1627 (dropped<4=1931) | split_flows=245 | windows=260
+  DDoS-UDP_Flood         | valid_flows=184 (dropped<4=129) | split_flows=28 | windows=505
+  DoS-TCP_Flood          | valid_flows=75 (dropped<4=65684) | split_flows=12 | windows=12
+  Recon-PortScan         | valid_flows=1259 (dropped<4=14904) | split_flows=189 | windows=262
+
+Input Attribution Share (Gradient x Input) [adv_trained]:
+Class                IP_Hdr   L4_Hdr  Payload  Ch1_Len  Ch2_Time
+Benign                0.169    0.307    0.044    0.079     0.401
+DDoS-UDP_Flood        0.507    0.013    0.328    0.130     0.022
+DoS-TCP_Flood         0.143    0.339    0.004    0.197     0.318
+Recon-PortScan        0.144    0.301    0.023    0.231     0.301
+Saved results\explainability\channel_attribution_adv_trained.csv
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> 
+
+
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> python scripts\plot_new_results.py
+Saved all 4 dark-emerald/maroon DAV figures to results\dav_new
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> python scripts\claim_check.py
+claim                       quoted  status   computed
+n_rows                         318  PASS     rows=318
+n_DDoS                         119  PASS     rows=119
+n_DoS                            1  PASS     rows=1
+n_Recon                         94  PASS     rows=94
+n_Brute                        104  PASS     rows=104
+n_known                        214  PASS     known=214
+correct_total                  180  PASS     known=180
+correct_DDoS                    94  PASS     known=94
+correct_Recon                   86  PASS     known=86
+acc_clean                   0.8411  PASS     known=0.84112
+acc_1                       0.8411  PASS     known=0.84112
+acc_4                       0.8364  PASS     known=0.83645
+acc_16                      0.8037  PASS     known=0.80374
+acc_32                      0.7336  PASS     known=0.73364
+conf_clean                  0.8713  PASS     known flows=0.91341, all flows=0.87133
+conf_1                      0.8698  PASS     known flows=0.91326, all flows=0.86984
+conf_4                      0.8651  PASS     known flows=0.91232, all flows=0.86511
+conf_16                     0.8541  PASS     known flows=0.90611, all flows=0.85407
+conf_32                      0.796  PASS     known flows=0.82755, all flows=0.79602
+bytes_1                      138.2  PASS     all flows=138.19, known flows=147.25
+bytes_4                      142.6  PASS     all flows=142.61, known flows=152.08
+bytes_16                     145.0  PASS     all flows=145.02, known flows=154.72
+bytes_32                     144.6  PASS     all flows=144.61, known flows=153.84
+checksum_valid              0.9964  PASS     all flows=0.99640, known flows=0.99465
+hdr_violations                   0  PASS     sum=0.0
+realization_max                0.0  PASS     max=0.00000
+DDoS_flips_16                    2  PASS     count=2
+DDoS_flips_32                   10  PASS     count=10
+DDoS_tobenign_32                 3  PASS     count=3
+Recon_flips_4                    1  PASS     count=1
+Recon_flips_16                   6  PASS     count=6
+Recon_flips_32                  13  PASS     count=13
+Recon_tobenign_32               12  PASS     count=12
+DDoS_rate_32                 0.106  PASS     rate=0.1064
+Recon_rate_32                0.151  PASS     rate=0.1512
+DDoS_ci_lo_32                0.059  PASS     lo=0.0588
+DDoS_ci_hi_32                0.185  PASS     hi=0.1849
+Recon_ci_lo_32               0.091  PASS     lo=0.0905
+Recon_ci_hi_32               0.242  PASS     hi=0.2416
+Brute_changed_1                  3  PASS     count=3
+Brute_changed_4                  6  PASS     count=6
+Brute_changed_16                18  PASS     count=18
+Brute_changed_32                28  PASS     count=28
+naive_evasion_DDoS_1          0.21  PASS     error rate=0.2101
+
+Baseline numbers searched in results/metrics/eval_baseline_summary.json (36 numeric values found):
+  PASS  overall accuracy               0.8691  at /overall_accuracy (+1 more)
+  PASS  macro F1                       0.7222  at /macro_f1 (+1 more)
+  PASS  ECE                            0.0497  at /ECE (+1 more)
+  PASS  Benign precision               0.9366  at /npz/Benign/precision
+  PASS  Benign recall                  0.9654  at /npz/Benign/recall
+  PASS  Benign F1                      0.9508  at /npz/Benign/F1
+  PASS  DDoS precision                 0.9741  at /npz/DDoS-UDP_Flood/precision
+  PASS  DDoS recall                    0.8178  at /npz/DDoS-UDP_Flood/recall
+  PASS  DDoS F1                        0.8891  at /npz/DDoS-UDP_Flood/F1
+  PASS  DoS-TCP precision              0.6667  at /npz/DoS-TCP_Flood/precision
+  PASS  DoS-TCP recall                 0.1667  at /npz/DoS-TCP_Flood/recall
+  PASS  DoS-TCP F1                     0.2667  at /npz/DoS-TCP_Flood/F1
+  PASS  Recon precision                 0.689  at /npz/Recon-PortScan/precision
+  PASS  Recon recall                   0.9046  at /npz/Recon-PortScan/recall
+  PASS  Recon F1                       0.7822  at /npz/Recon-PortScan/F1
+  PASS  Benign support                    260  at /npz/Benign/support
+  PASS  DDoS support                      505  at /npz/DDoS-UDP_Flood/support
+  PASS  DoS-TCP support                    12  at /npz/DoS-TCP_Flood/support
+  PASS  Recon support                     262  at /npz/Recon-PortScan/support
+  PASS  held-out -> Benign               1755  at /heldout_pred_dist/Benign (+1 more)
+  PASS  held-out -> Recon                 889  at /heldout_pred_dist/Recon-PortScan (+1 more)
+  PASS  held-out -> DDoS                  129  at /heldout_pred_dist/DDoS-UDP_Flood (+1 more)
+  PASS  held-out -> DoS-TCP               265  at /heldout_pred_dist/DoS-TCP_Flood (+1 more)
+  PASS  held-out mean max-softmax      0.8361  at /heldout_mean_max_softmax (+1 more)
+  PASS  known mean max-softmax         0.9182  at /known_mean_max_softmax (+1 more)
+  PASS  held-out mean entropy          0.4172  at /heldout_mean_entropy (+1 more)
+
+70 pass, 0 fail, 0 skipped
+(venv) PS C:\Users\Laptop\Desktop\protocol-constrained-adversarial-traffic> 
